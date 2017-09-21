@@ -23,7 +23,7 @@
 
 ```
 [self.view cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoNetwork reloadBlock:^{
-[SVProgressHUD showSuccessWithStatus:@"有网了"];
+    [SVProgressHUD showSuccessWithStatus:@"有网了"];
 }];
 ```
 
@@ -31,7 +31,7 @@
 
 ```
 [self.tableView cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoNetwork reloadBlock:^{
-[self getData];
+    [self getData];
 }];
 ```
 
