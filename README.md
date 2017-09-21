@@ -19,9 +19,20 @@
 
 **2.需要的时候直接调用方法**
 
+- UIView
+
 ```
-[self.tableView showPlaceholderViewWithType:CQPlaceholderViewTypeNoNetwork reloadBlock:^{
+[self.view cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoNetwork reloadBlock:^{
+[SVProgressHUD showSuccessWithStatus:@"有网了"];
+}];
+```
+
+- UITabeleView
+
+```
+[self.tableView cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoNetwork reloadBlock:^{
 [self getData];
 }];
 ```
 
+或其它继承UIView的都可以直接使用。
