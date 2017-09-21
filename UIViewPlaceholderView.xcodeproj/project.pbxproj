@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F48DCBAA615D9E2B4CE4EE0 /* libPods-UIViewPlaceholderView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1283AB453331175E1C0CE688 /* libPods-UIViewPlaceholderView.a */; };
 		D98AA6621F73AE1700C1726E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98AA6611F73AE1700C1726E /* main.m */; };
 		D98AA6651F73AE1700C1726E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98AA6641F73AE1700C1726E /* AppDelegate.m */; };
 		D98AA6681F73AE1700C1726E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98AA6671F73AE1700C1726E /* ViewController.m */; };
 		D98AA66B1F73AE1700C1726E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98AA6691F73AE1700C1726E /* Main.storyboard */; };
 		D98AA66D1F73AE1700C1726E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98AA66C1F73AE1700C1726E /* Assets.xcassets */; };
 		D98AA6701F73AE1700C1726E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98AA66E1F73AE1700C1726E /* LaunchScreen.storyboard */; };
+		D98AA67D1F73BA0000C1726E /* 沙发.png in Resources */ = {isa = PBXBuildFile; fileRef = D98AA6781F73BA0000C1726E /* 沙发.png */; };
+		D98AA67E1F73BA0000C1726E /* 无商品.png in Resources */ = {isa = PBXBuildFile; fileRef = D98AA6791F73BA0000C1726E /* 无商品.png */; };
+		D98AA67F1F73BA0000C1726E /* 无网.png in Resources */ = {isa = PBXBuildFile; fileRef = D98AA67A1F73BA0000C1726E /* 无网.png */; };
+		D98AA6801F73BA0000C1726E /* UIView+PlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D98AA67C1F73BA0000C1726E /* UIView+PlaceholderView.m */; };
+		D98AA6831F73BA5100C1726E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98AA6821F73BA5100C1726E /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1283AB453331175E1C0CE688 /* libPods-UIViewPlaceholderView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIViewPlaceholderView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30D2DFC1B1CD339CF8B2ED67 /* Pods-UIViewPlaceholderView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIViewPlaceholderView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIViewPlaceholderView/Pods-UIViewPlaceholderView.debug.xcconfig"; sourceTree = "<group>"; };
+		B1D9922DB420EA007D5C3F86 /* Pods-UIViewPlaceholderView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIViewPlaceholderView.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIViewPlaceholderView/Pods-UIViewPlaceholderView.release.xcconfig"; sourceTree = "<group>"; };
 		D98AA65D1F73AE1700C1726E /* UIViewPlaceholderView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewPlaceholderView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98AA6611F73AE1700C1726E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D98AA6631F73AE1700C1726E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +35,13 @@
 		D98AA66C1F73AE1700C1726E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D98AA66F1F73AE1700C1726E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D98AA6711F73AE1700C1726E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D98AA6781F73BA0000C1726E /* 沙发.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "沙发.png"; sourceTree = "<group>"; };
+		D98AA6791F73BA0000C1726E /* 无商品.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "无商品.png"; sourceTree = "<group>"; };
+		D98AA67A1F73BA0000C1726E /* 无网.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "无网.png"; sourceTree = "<group>"; };
+		D98AA67B1F73BA0000C1726E /* UIView+PlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PlaceholderView.h"; sourceTree = "<group>"; };
+		D98AA67C1F73BA0000C1726E /* UIView+PlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PlaceholderView.m"; sourceTree = "<group>"; };
+		D98AA6811F73BA5100C1726E /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		D98AA6821F73BA5100C1726E /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F48DCBAA615D9E2B4CE4EE0 /* libPods-UIViewPlaceholderView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13AA121476293B43620E5FED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1283AB453331175E1C0CE688 /* libPods-UIViewPlaceholderView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DCCF3456572335F9E40C504 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30D2DFC1B1CD339CF8B2ED67 /* Pods-UIViewPlaceholderView.debug.xcconfig */,
+				B1D9922DB420EA007D5C3F86 /* Pods-UIViewPlaceholderView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D98AA6541F73AE1700C1726E = {
 			isa = PBXGroup;
 			children = (
 				D98AA65F1F73AE1700C1726E /* UIViewPlaceholderView */,
 				D98AA65E1F73AE1700C1726E /* Products */,
+				2DCCF3456572335F9E40C504 /* Pods */,
+				13AA121476293B43620E5FED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +94,13 @@
 		D98AA65F1F73AE1700C1726E /* UIViewPlaceholderView */ = {
 			isa = PBXGroup;
 			children = (
+				D98AA6771F73B9D800C1726E /* UIViewPlaceholderView */,
 				D98AA6631F73AE1700C1726E /* AppDelegate.h */,
 				D98AA6641F73AE1700C1726E /* AppDelegate.m */,
 				D98AA6661F73AE1700C1726E /* ViewController.h */,
 				D98AA6671F73AE1700C1726E /* ViewController.m */,
+				D98AA6811F73BA5100C1726E /* SecondViewController.h */,
+				D98AA6821F73BA5100C1726E /* SecondViewController.m */,
 				D98AA6691F73AE1700C1726E /* Main.storyboard */,
 				D98AA66C1F73AE1700C1726E /* Assets.xcassets */,
 				D98AA66E1F73AE1700C1726E /* LaunchScreen.storyboard */,
@@ -79,6 +118,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D98AA6771F73B9D800C1726E /* UIViewPlaceholderView */ = {
+			isa = PBXGroup;
+			children = (
+				D98AA67B1F73BA0000C1726E /* UIView+PlaceholderView.h */,
+				D98AA67C1F73BA0000C1726E /* UIView+PlaceholderView.m */,
+				D98AA67A1F73BA0000C1726E /* 无网.png */,
+				D98AA6791F73BA0000C1726E /* 无商品.png */,
+				D98AA6781F73BA0000C1726E /* 沙发.png */,
+			);
+			path = UIViewPlaceholderView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98AA6741F73AE1700C1726E /* Build configuration list for PBXNativeTarget "UIViewPlaceholderView" */;
 			buildPhases = (
+				0C0DDEF3DDAEAA8CCAF116F9 /* [CP] Check Pods Manifest.lock */,
 				D98AA6591F73AE1700C1726E /* Sources */,
 				D98AA65A1F73AE1700C1726E /* Frameworks */,
 				D98AA65B1F73AE1700C1726E /* Resources */,
+				F4F48DBD3869C61EFC9E3321 /* [CP] Embed Pods Frameworks */,
+				503B1AABF36EB4453B781B59 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,18 +194,71 @@
 			files = (
 				D98AA6701F73AE1700C1726E /* LaunchScreen.storyboard in Resources */,
 				D98AA66D1F73AE1700C1726E /* Assets.xcassets in Resources */,
+				D98AA67F1F73BA0000C1726E /* 无网.png in Resources */,
 				D98AA66B1F73AE1700C1726E /* Main.storyboard in Resources */,
+				D98AA67E1F73BA0000C1726E /* 无商品.png in Resources */,
+				D98AA67D1F73BA0000C1726E /* 沙发.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C0DDEF3DDAEAA8CCAF116F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		503B1AABF36EB4453B781B59 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIViewPlaceholderView/Pods-UIViewPlaceholderView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4F48DBD3869C61EFC9E3321 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIViewPlaceholderView/Pods-UIViewPlaceholderView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D98AA6591F73AE1700C1726E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98AA6831F73BA5100C1726E /* SecondViewController.m in Sources */,
 				D98AA6681F73AE1700C1726E /* ViewController.m in Sources */,
+				D98AA6801F73BA0000C1726E /* UIView+PlaceholderView.m in Sources */,
 				D98AA6651F73AE1700C1726E /* AppDelegate.m in Sources */,
 				D98AA6621F73AE1700C1726E /* main.m in Sources */,
 			);
@@ -271,25 +378,31 @@
 		};
 		D98AA6751F73AE1700C1726E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30D2DFC1B1CD339CF8B2ED67 /* Pods-UIViewPlaceholderView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4J5JWPJ294;
 				INFOPLIST_FILE = UIViewPlaceholderView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KuaiJianKang.UIViewPlaceholderView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
 		};
 		D98AA6761F73AE1700C1726E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1D9922DB420EA007D5C3F86 /* Pods-UIViewPlaceholderView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4J5JWPJ294;
 				INFOPLIST_FILE = UIViewPlaceholderView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KuaiJianKang.UIViewPlaceholderView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
 		};
@@ -312,6 +425,7 @@
 				D98AA6761F73AE1700C1726E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
