@@ -72,14 +72,12 @@ static void *strKey = &strKey;
     [reloadButton setTitle:@"重新加载" forState:UIControlStateNormal];
     reloadButton.layer.borderWidth = 1;
     reloadButton.layer.borderColor = [UIColor blackColor].CGColor;
-    @weakify(self);
     [[reloadButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         // 执行block回调
         if (reloadBlock) {
             reloadBlock();
         }
         // 从父视图移除
-        @strongify(self);
         [self.cq_placeholderView removeFromSuperview];
         self.cq_placeholderView = nil;
     }];

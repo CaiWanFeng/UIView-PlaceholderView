@@ -72,6 +72,8 @@
         {
             [self.view cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoNetwork reloadBlock:^{
                 [SVProgressHUD showSuccessWithStatus:@"有网了"];
+                // 直接写self也不会导致内存泄漏
+                self.view.backgroundColor = [UIColor redColor];
             }];
         }
             break;
