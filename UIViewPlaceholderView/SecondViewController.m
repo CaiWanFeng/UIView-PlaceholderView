@@ -10,6 +10,7 @@
 #import "UIView+PlaceholderView.h"
 #import <SVProgressHUD.h>
 #import <ReactiveCocoa/RACEXTScope.h>
+#import <Masonry.h>
 
 @interface SecondViewController ()
 
@@ -23,8 +24,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.tableView = [[UITableView alloc] init];
     [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
     
     for (int i = 0; i < 3; i ++) {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(90, 90 + i * 80, 200, 40)];

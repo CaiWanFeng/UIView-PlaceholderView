@@ -32,20 +32,34 @@ static void *strKey = &strKey;
 }
 
 /**
- 展示UIScrollView及其子类的占位图
+ 展示UIView及其子类的占位图
  
  @param type 占位图类型
  @param reloadBlock 重新加载回调的block
  */
 - (void)cq_showPlaceholderViewWithType:(CQPlaceholderViewType)type reloadBlock:(void (^)())reloadBlock {
+    // 如果是UIScrollView及其子类，占位图展示期间禁止scroll
+    BOOL originalScrollEnabled = NO; // 用来记录原本的scrollEnabled
+    if ([self isKindOfClass:[UIScrollView class]]) {
+        UIScrollView *scrollView = (UIScrollView *)self;
+        // 先记录原本的scrollEnabled
+        originalScrollEnabled = scrollView.scrollEnabled;
+        // 再将scrollEnabled设为NO
+        scrollView.scrollEnabled = NO;
+    }
+    
     //------- 占位图 -------//
     if (self.cq_placeholderView) {
         [self.cq_placeholderView removeFromSuperview];
         self.cq_placeholderView = nil;
     }
-    self.cq_placeholderView = [[UIView alloc] initWithFrame:self.frame];
-    [self.superview addSubview:self.cq_placeholderView];
+    self.cq_placeholderView = [[UIView alloc] init];
+    [self addSubview:self.cq_placeholderView];
     self.cq_placeholderView.backgroundColor = [UIColor whiteColor];
+    [self.cq_placeholderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(self);
+        make.size.mas_equalTo(self);
+    }];
     
     //------- 图标 -------//
     UIImageView *imageView = [[UIImageView alloc] init];
@@ -80,6 +94,11 @@ static void *strKey = &strKey;
         // 从父视图移除
         [self.cq_placeholderView removeFromSuperview];
         self.cq_placeholderView = nil;
+        // 复原UIScrollView的scrollEnabled
+        if ([self isKindOfClass:[UIScrollView class]]) {
+            UIScrollView *scrollView = (UIScrollView *)self;
+            scrollView.scrollEnabled = originalScrollEnabled;
+        }
     }];
     [reloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(reloadButton.superview);

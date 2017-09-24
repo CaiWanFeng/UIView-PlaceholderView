@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-/** UIScrollView的占位图类型 */
+/** UIView的占位图类型 */
 typedef NS_ENUM(NSInteger, CQPlaceholderViewType) {
     /** 没网 */
     CQPlaceholderViewTypeNoNetwork,
@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, CQPlaceholderViewType) {
 @interface UIView (PlaceholderView)
 
 /**
- 展示UIScrollView及其子类的占位图
+ 展示UIView及其子类的占位图
 
  @param type 占位图类型
  @param reloadBlock 重新加载回调的block
