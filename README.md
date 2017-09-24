@@ -6,7 +6,7 @@
 
 ### 详情
 
-敬请期待
+http://www.jianshu.com/p/dccf16239ede
 
 
 
