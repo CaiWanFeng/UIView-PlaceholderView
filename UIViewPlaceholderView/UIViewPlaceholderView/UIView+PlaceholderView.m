@@ -137,4 +137,12 @@ static void *strKey = &strKey;
     }
 }
 
+/** 移除占位图 */
+- (void)cq_removePlaceholderView {
+    if (self.cq_placeholderView) {
+        [self.cq_placeholderView removeFromSuperview];
+        self.cq_placeholderView = nil;
+    }
+}
+
 @end

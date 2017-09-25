@@ -75,7 +75,7 @@
         case 101: // 没网
         {
             [self.view cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoNetwork reloadBlock:^{
-                [SVProgressHUD showSuccessWithStatus:@"有网了"];
+                [SVProgressHUD showSuccessWithStatus:@"重新加载按钮点击"];
                 // 直接写self也不会导致内存泄漏
                 self.view.backgroundColor = [UIColor redColor];
             }];
@@ -84,9 +84,13 @@
             
         case 102:
         {
-            [self.tableView cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoComment reloadBlock:^{
-                [SVProgressHUD showInfoWithStatus:@"还不赶紧抢沙发"];
-            }];
+            [self.tableView cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoComment reloadBlock:nil];
+            
+            // 1秒后调用方法移除占位图
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [SVProgressHUD showInfoWithStatus:@"调用方法移除占位图"];
+                [self.tableView cq_removePlaceholderView];
+            });
         }
             break;
             

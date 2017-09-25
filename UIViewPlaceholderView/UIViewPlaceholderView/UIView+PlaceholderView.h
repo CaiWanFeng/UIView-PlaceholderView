@@ -28,4 +28,7 @@ typedef NS_ENUM(NSInteger, CQPlaceholderViewType) {
  */
 - (void)cq_showPlaceholderViewWithType:(CQPlaceholderViewType)type reloadBlock:(void(^)())reloadBlock;
 
+/** 移除占位图 */
+- (void)cq_removePlaceholderView;
+
 @end
