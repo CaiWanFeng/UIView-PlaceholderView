@@ -16,19 +16,30 @@
 
 /** 占位图 */
 @property (nonatomic, strong) UIView *cq_placeholderView;
+/** 用来记录UIScrollView最初的scrollEnabled */
+@property (nonatomic, assign) BOOL cq_originalScrollEnabled;
 
 @end
 
 @implementation UIView (PlaceholderView)
 
-static void *strKey = &strKey;
+static void *placeholderViewKey = &placeholderViewKey;
+static void *originalScrollEnabledKey = &originalScrollEnabledKey;
 
 - (UIView *)cq_placeholderView {
-    return objc_getAssociatedObject(self, &strKey);
+    return objc_getAssociatedObject(self, &placeholderViewKey);
 }
 
 - (void)setCq_placeholderView:(UIView *)cq_placeholderView {
-    objc_setAssociatedObject(self, &strKey, cq_placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &placeholderViewKey, cq_placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)cq_originalScrollEnabled {
+    return [objc_getAssociatedObject(self, &originalScrollEnabledKey) boolValue];
+}
+
+- (void)setCq_originalScrollEnabled:(BOOL)cq_originalScrollEnabled {
+    objc_setAssociatedObject(self, &originalScrollEnabledKey, @(cq_originalScrollEnabled), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 /**
@@ -39,11 +50,10 @@ static void *strKey = &strKey;
  */
 - (void)cq_showPlaceholderViewWithType:(CQPlaceholderViewType)type reloadBlock:(void (^)())reloadBlock {
     // 如果是UIScrollView及其子类，占位图展示期间禁止scroll
-    BOOL originalScrollEnabled = NO; // 用来记录原本的scrollEnabled
     if ([self isKindOfClass:[UIScrollView class]]) {
         UIScrollView *scrollView = (UIScrollView *)self;
         // 先记录原本的scrollEnabled
-        originalScrollEnabled = scrollView.scrollEnabled;
+        self.cq_originalScrollEnabled = scrollView.scrollEnabled;
         // 再将scrollEnabled设为NO
         scrollView.scrollEnabled = NO;
     }
@@ -97,7 +107,7 @@ static void *strKey = &strKey;
         // 复原UIScrollView的scrollEnabled
         if ([self isKindOfClass:[UIScrollView class]]) {
             UIScrollView *scrollView = (UIScrollView *)self;
-            scrollView.scrollEnabled = originalScrollEnabled;
+            scrollView.scrollEnabled = self.cq_originalScrollEnabled;
         }
     }];
     [reloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -137,11 +147,19 @@ static void *strKey = &strKey;
     }
 }
 
-/** 移除占位图 */
+/**
+ 主动移除占位图
+ 占位图会在你点击“重新加载”按钮的时候自动移除，你也可以调用此方法主动移除
+ */
 - (void)cq_removePlaceholderView {
     if (self.cq_placeholderView) {
         [self.cq_placeholderView removeFromSuperview];
         self.cq_placeholderView = nil;
+    }
+    // 复原UIScrollView的scrollEnabled
+    if ([self isKindOfClass:[UIScrollView class]]) {
+        UIScrollView *scrollView = (UIScrollView *)self;
+        scrollView.scrollEnabled = self.cq_originalScrollEnabled;
     }
 }
 
