@@ -74,9 +74,10 @@
             
         case 101: // 没网
         {
+            @weakify(self);
             [self.view cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoNetwork reloadBlock:^{
+                @strongify(self);
                 [SVProgressHUD showSuccessWithStatus:@"重新加载按钮点击"];
-                // 直接写self也不会导致内存泄漏
                 self.view.backgroundColor = [UIColor redColor];
             }];
         }
@@ -103,9 +104,7 @@
 - (void)getData {
     [SVProgressHUD show];
     
-    @weakify(self);
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        @strongify(self);
         // 是否成功获取数据
         BOOL isGetData = arc4random() % 2;
         // 是否数据源为空
@@ -121,8 +120,10 @@
                 [SVProgressHUD showSuccessWithStatus:@"数据正常展示"];
             }
         } else {
+            @weakify(self);
             // 未成功获取数据，展示无网占位图
             [self.tableView cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoNetwork reloadBlock:^{
+                @strongify(self);
                 [self getData];
             }];
             [SVProgressHUD showErrorWithStatus:@"网络不给力"];

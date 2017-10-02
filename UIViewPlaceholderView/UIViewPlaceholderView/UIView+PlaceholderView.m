@@ -96,7 +96,9 @@ static void *originalScrollEnabledKey = &originalScrollEnabledKey;
     [reloadButton setTitle:@"重新加载" forState:UIControlStateNormal];
     reloadButton.layer.borderWidth = 1;
     reloadButton.layer.borderColor = [UIColor blackColor].CGColor;
+    @weakify(self);
     [[reloadButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
         // 执行block回调
         if (reloadBlock) {
             reloadBlock();
