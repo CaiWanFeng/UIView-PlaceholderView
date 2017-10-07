@@ -36,3 +36,10 @@ http://www.jianshu.com/p/dccf16239ede
 ```
 
 或其它继承UIView的都可以直接使用。
+
+**3.也可以指定占位图的frame**
+```
+[self.tableView cq_showPlaceholderViewWithFrame:CGRectMake(90, 90, 200, 300) type:CQPlaceholderViewTypeNoGoods reloadBlock:^{
+    NSLog(@"点击");
+}];
+```

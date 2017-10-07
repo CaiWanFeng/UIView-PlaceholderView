@@ -30,6 +30,13 @@
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
+    
+    // 指定占位图的frame
+    [self.tableView cq_showPlaceholderViewWithFrame:CGRectMake(90, 90, 200, 300) type:CQPlaceholderViewTypeNoGoods reloadBlock:^{
+        NSLog(@"点击");
+    }];
+    
+    
     for (int i = 0; i < 3; i ++) {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(90, 90 + i * 80, 200, 40)];
         [self.tableView addSubview:button];
