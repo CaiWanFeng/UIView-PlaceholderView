@@ -37,9 +37,13 @@ http://www.jianshu.com/p/dccf16239ede
 
 或其它继承UIView的都可以直接使用。
 
-**3.也可以指定占位图的frame**
+**3.也可以重新设置占位图的约束**
 ```
-[self.tableView cq_showPlaceholderViewWithFrame:CGRectMake(90, 90, 200, 300) type:CQPlaceholderViewTypeNoGoods reloadBlock:^{
-    NSLog(@"点击");
+[self.tableView cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoComment reloadBlock:nil];
+// 重新设置占位图约束
+[self.tableView.cq_placeholderView mas_remakeConstraints:^(MASConstraintMaker *make) {
+make.left.right.mas_equalTo(self.view);
+make.top.mas_equalTo(self.tableView).mas_offset(50);
+make.bottom.mas_equalTo(self.view).mas_offset(-30);
 }];
 ```
