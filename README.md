@@ -42,8 +42,8 @@ http://www.jianshu.com/p/dccf16239ede
 [self.tableView cq_showPlaceholderViewWithType:CQPlaceholderViewTypeNoComment reloadBlock:nil];
 // 重新设置占位图约束
 [self.tableView.cq_placeholderView mas_remakeConstraints:^(MASConstraintMaker *make) {
-make.left.right.mas_equalTo(self.view);
-make.top.mas_equalTo(self.tableView).mas_offset(50);
-make.bottom.mas_equalTo(self.view).mas_offset(-30);
+    make.left.right.mas_equalTo(self.view);
+    make.top.mas_equalTo(self.tableView).mas_offset(50);
+    make.bottom.mas_equalTo(self.view).mas_offset(-30);
 }];
 ```
