@@ -24,7 +24,6 @@ typedef NS_ENUM(NSInteger, CQPlaceholderViewType) {
 @property (nonatomic, strong, readonly) UIView *cq_placeholderView;
 
 #pragma mark - 展示占位图
-
 /**
  展示UIView及其子类的占位图，大小和view一样（本质是在这个view上添加一个自定义view）
 
